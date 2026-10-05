@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.6e0bddde.css",
-    "main.js": "/static/js/main.6d2f3b0d.js",
+    "main.css": "/static/css/main.a8a18191.css",
+    "main.js": "/static/js/main.052a0032.js",
     "static/media/rayan.jpg": "/static/media/rayan.b5190f193c20b89e168d.jpg",
     "static/media/greedyants.png": "/static/media/greedyants.c8e97a7c539ebe9e19b1.png",
     "static/media/social.jpeg": "/static/media/social.b93eff3c7ee2fd0fa6b5.jpeg",
     "static/media/uci2.svg": "/static/media/uci2.6979343a21289a40b06cd7c27c3344c9.svg",
+    "static/media/ctc-experience.png": "/static/media/ctc-experience.acaf410ee1048bc70d8c.png",
     "static/media/coursework.PNG": "/static/media/coursework.b335736518eb09482d6c.PNG",
-    "static/media/CTC.svg": "/static/media/CTC.f790052e8a95bd48789a85b3cf881512.svg",
     "static/media/zuum.png": "/static/media/zuum.97940811ddceac203a58.png",
     "static/media/personal.PNG": "/static/media/personal.08c5914dd29887d06d00.PNG",
     "static/media/icssc.svg": "/static/media/icssc.5af165bc5627dc12ca35f97b471deef6.svg",
     "static/media/cdz.svg": "/static/media/cdz.1706f69a9fae37323603e3794e83e8ee.svg",
     "index.html": "/index.html",
-    "main.6e0bddde.css.map": "/static/css/main.6e0bddde.css.map",
-    "main.6d2f3b0d.js.map": "/static/js/main.6d2f3b0d.js.map"
+    "main.a8a18191.css.map": "/static/css/main.a8a18191.css.map",
+    "main.052a0032.js.map": "/static/js/main.052a0032.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e0bddde.css",
-    "static/js/main.6d2f3b0d.js"
+    "static/css/main.a8a18191.css",
+    "static/js/main.052a0032.js"
   ]
 }
