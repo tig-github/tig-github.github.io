@@ -1,7 +1,7 @@
 /*
     Card that gives information on a given project
 */
-import React from "react";
+import React, { useRef } from "react";
 import {
   Text,
   Button,
@@ -21,19 +21,45 @@ import ProjectCardModal from "./ProjectCardModal";
 
 const ProjectCard = ({title, img, tag, date, link, description, icons, isSchool, fadeOpen}) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const cardRef = useRef(null);
+
+    const handlePointerMove = (event) => {
+        if (event.pointerType !== "mouse" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        const card = cardRef.current;
+        if (!card) return;
+
+        const bounds = card.getBoundingClientRect();
+        const horizontal = (event.clientX - bounds.left) / bounds.width;
+        const vertical = (event.clientY - bounds.top) / bounds.height;
+        const rotateX = (0.5 - vertical) * 16;
+        const rotateY = (horizontal - 0.5) * 16;
+        const rotateZ = (horizontal - 0.5) * 2;
+
+        card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) rotateZ(${rotateZ}deg)`;
+    };
+
+    const resetTilt = () => {
+        if (cardRef.current) {
+            cardRef.current.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)";
+        }
+    };
+
     return (
         <Fade in={fadeOpen} transition={{enter: {duration: 0.2}}} unmountOnExit>
         <Card 
+            ref={cardRef}
             w="20rem" 
             bg="rgba(212, 90, 253, .2)"
             color="white"
             borderRadius="7%"
-            _hover={
-                {
-                    transform: "perspective(1200px) rotateX(10deg) rotateY(-10deg) rotateZ(2deg)",
-                    "transitionDuration": "1s",
-                
-                }}
+            onPointerMove={handlePointerMove}
+            onPointerLeave={resetTilt}
+            transition="transform 160ms ease-out"
+            sx={{
+                transform: "perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg)",
+                "@media (prefers-reduced-motion: reduce)": { transition: "none" },
+            }}
         >
             <CardHeader maxH="6rem" opacity="100%">
                 <Center>

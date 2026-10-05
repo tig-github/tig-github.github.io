@@ -57,11 +57,6 @@ const Commits = () => {
         yearRef.current = newYear;
         setYear(newYear);
     }
-
-    // const getOldCommits = async () => {
-    //     const ogcommits = await getPriorCommits();
-    //     console.log(processCommitValues(processCommitCounts(ogcommits)));
-    // }
     
     useEffect(() => {
         if (!didInit) {

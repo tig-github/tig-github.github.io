@@ -28,14 +28,14 @@ const Navbar = () => {
                 Experience
               </Button>{" "}
             </HashLink>
-            <HashLink smooth to="/#skills">
-              <Button colorScheme="blackAlpha" size="lg">
-                Skills
-              </Button>
-            </HashLink>
             <HashLink smooth to="/#projects">
               <Button colorScheme="blackAlpha" size="lg">
                 Projects
+              </Button>
+            </HashLink>
+            <HashLink smooth to="/#skills">
+              <Button colorScheme="blackAlpha" size="lg">
+                Skills
               </Button>
             </HashLink>
             <HashLink smooth to="/#resources">
@@ -51,7 +51,7 @@ const Navbar = () => {
             mr={3}
             ml={6}
           >
-            <FaLinkedin size={40} color="#0072b1" />
+            <FaLinkedin size={40} color="white" />
           </Link>
           <Link href="https://github.com/tig-github" isExternal>
             <Box bg="white" borderRadius="full">

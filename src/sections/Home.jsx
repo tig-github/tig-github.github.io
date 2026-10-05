@@ -5,7 +5,6 @@ import {
   Stack,
   Flex,
   Image,
-  useBreakpointValue,
 } from "@chakra-ui/react";
 import HomeField from "../components/HomeField";
 import me from "../images/rayan.jpg";
@@ -13,46 +12,38 @@ import Projects from "./Projects";
 import Skills from "./Skills";
 import Experience from "./Experience";
 import Resources from "./Resources";
-import Commits from "../components/Commits/Commits";
 import Footer from "../components/Footer";
 
 const Home = () => {
-  const imageSize = useBreakpointValue(
-    {
-      base: 0,
-      md: 10,
-    },
-    {
-      fallback: "base",
-    }
-  );
-
   return (
     <Box bg="#2C1B47" maxH="100%" minH="calc(100vh)" w="100%">
-      <Stack spacing={10}>
+      <Stack spacing={0}>
         <Flex
           justify="center"
-          flexWrap="wrap"
-          mt={{ base: "30%", sm: "20%", md: "10%" }}
+          align="center"
+          gap={{ base: 8, lg: 12 }}
+          flexDirection={{ base: "column", md: "row" }}
+          px={{ base: 6, md: 10 }}
+          mt={{ base: "34%", sm: "23%", md: "12%" }}
+          pb="var(--section-space)"
         >
-          <Image
-            src={me}
-            boxSize="30%"
-            minW="20rem"
+          <Box
+            className="hero-photo-ring"
+            flexShrink={0}
+            w={{ base: "min(84vw, 25rem)", md: "min(42vw, 32rem)" }}
+            p="4px"
             borderRadius="full"
-            mr={imageSize}
-            mb={3}
-          />
-          <Center width="55%" mt="1rem">
+            bgGradient="linear(to-br, #FF9A78, #df6d91, #7146a2)"
+          >
+            <Image src={me} w="100%" aspectRatio={1} objectFit="cover" borderRadius="full" />
+          </Box>
+          <Center width={{ base: "100%", md: "50%" }} maxW="46rem" mt={0}>
             <HomeField />
           </Center>
         </Flex>
-        <Center>
-          <Commits />
-        </Center>
         <Experience />
-        <Skills />
         <Projects />
+        <Skills />
         <Resources />
         <Footer />
       </Stack>

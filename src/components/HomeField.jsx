@@ -1,55 +1,56 @@
-/*
-Large box that has an image oriented to right, specialized for homefield
-*/
-// TODO - would make more sense for this to be the Home section, and move logic from Home.jsx onto here
 import React from "react";
-import { Box, Text, Stack, Heading } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Link, Stack, Text } from "@chakra-ui/react";
+import { HashLink } from "react-router-hash-link";
+import { FaLinkedin } from "react-icons/fa";
 
-const HomeField = () => {
-  return (
-    <>
-      <Box
-        bg="#DCCAE9"
-        borderRadius="1rem"
-        w="100%"
-        h="100%"
-        pb={3}
-        pl={5}
-        pr={5}
+const interests = ["Algorithms", "Programming Languages", "Music", "History"];
+
+const HomeField = () => (
+  <Stack className="hero-copy" align="flex-start" spacing={{ base: 4, md: 5 }}>
+    <Box>
+      <Heading
+        as="h1"
+        color="white"
+        fontSize={{ base: "clamp(1.75rem, 8vw, 3.25rem)", md: "clamp(2.5rem, 5vw, 4.75rem)" }}
+        lineHeight="1.05"
+        whiteSpace="nowrap"
       >
-        <Stack align="left" mt="1rem" spacing={5}>
-          <Heading mb="2rem" align="left">
-            <Text>Hello! My name is Rayan</Text>
-          </Heading>
-          <Text>
-            I am currently an Associate Full Stack Developer at Codazen, on
-            assignment at Meta.
-          </Text>
-          <Text>
-            I am an alumni Computer Science student at the University of
-            California, Irvine with a specialization in Algorithms
-          </Text>
-          <Text>I am passionate about Music, History, and Software.</Text>
-          <Text>
-            I like learning about Algorithms, Programming Languages, and more.
-          </Text>
-          {/* <Text>
-            Currently I am studying Quantum Computing and Graph Algorithms.
-          </Text> */}
-          <Text>Currently I am working building a blog.</Text>
-          <Text>
-            Feel free to check out all the projects I've worked on in the
-            Projects section. Projects include personal projects, school
-            projects, and open source contributions.
-          </Text>
-          <Text>
-            I'm also happy to connect on LinkedIn, with a link to mine on the
-            top right of this page.
-          </Text>
-        </Stack>
-      </Box>
-    </>
-  );
-};
+        Rayan Tighiouart
+      </Heading>
+    </Box>
+
+    <Text color="purple.100" fontSize={{ base: "xl", md: "1.375rem" }} fontWeight="600">
+      Associate Full Stack Developer · Codazen @ Meta
+    </Text>
+
+    <Text color="whiteAlpha.800" fontSize={{ base: "xl", md: "1.375rem" }} lineHeight="1.8">
+      UC Irvine CS alum specializing in algorithms. I’m into music, history, and building software.
+    </Text>
+
+    <Flex gap={2} wrap="wrap" aria-label="Interests">
+      {interests.map((interest) => (
+        <Box key={interest} as="span" px={3} py={1.5} border="1px solid" borderColor="whiteAlpha.300" borderRadius="full" color="purple.100" fontSize="sm">
+          {interest}
+        </Box>
+      ))}
+    </Flex>
+
+    <Flex gap={3} wrap="wrap" pt={1}>
+      <HashLink smooth to="/#projects">
+      <Button bg="purple.300" color="#281b3d" _hover={{ bg: "purple.200", transform: "translateY(-1px)" }} size="lg">
+          View Projects
+        </Button>
+      </HashLink>
+      <Button as={Link} href="https://www.linkedin.com/in/rayantig/" isExternal variant="outline" color="white" borderColor="whiteAlpha.500" leftIcon={<FaLinkedin />} size="lg" _hover={{ bg: "whiteAlpha.200", textDecoration: "none" }}>
+        LinkedIn
+      </Button>
+    </Flex>
+
+    <Flex align="center" gap={2} color="whiteAlpha.700" fontSize="sm" pt={1}>
+      <Box as="span" w="2" h="2" borderRadius="full" bg="purple.300" boxShadow="0 0 10px var(--chakra-colors-purple-300)" />
+      Currently building a web simulation game
+    </Flex>
+  </Stack>
+);
 
 export default HomeField;
