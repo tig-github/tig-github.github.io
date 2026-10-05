@@ -6,21 +6,19 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { FaReact } from "react-icons/fa";
-import ctcIcon from "../images/CTC.svg";
+import ctcIcon from "../images/ctc-experience.png";
 import uciIcon from "../images/uci2.svg";
 import cdzIcon from "../images/cdz.svg";
 
 const Experience = () => {
   return (
     <>
-      <Box bg="#2C1B47" w="100%" h="100%" id="experience">
+      <Box className="site-section" bg="#2C1B47" w="100%" h="100%" id="experience">
         <Stack
           align="center"
           spacing={10}
-          mt={{ base: "30%", sm: "20%", md: "10%" }}
-          mb="5rem"
         >
-          <Heading as="h1" mb="4rem">
+          <Heading as="h1">
             <Text color="white">Experience</Text>
           </Heading>
           <VerticalTimeline>
@@ -36,6 +34,7 @@ const Experience = () => {
                 borderRight: "7px solid black",
               }}
               date="June 2024 - Present"
+              dateClassName="experience-date"
               icon={<Image src={cdzIcon} borderRadius="full" />}
             >
               <h3 className="vertical-timeline-element-title">
@@ -58,6 +57,8 @@ const Experience = () => {
                 borderRight: "7px solid white",
               }}
               date="Oct 2021 - June 2024"
+              dateClassName="experience-date"
+              iconClassName="ctc-experience-icon"
               icon={<Image src={ctcIcon} borderRadius="full" />}
             >
               <h3 className="vertical-timeline-element-title">
@@ -84,6 +85,7 @@ const Experience = () => {
                 borderRight: "7px solid #617dfa",
               }}
               date="March 2022 - December 2022"
+              dateClassName="experience-date"
               icon={<Image src={uciIcon} borderRadius="full" />}
             >
               <h3 className="vertical-timeline-element-title">

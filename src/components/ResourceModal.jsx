@@ -1,7 +1,6 @@
 /*
 Modal that displays links for a given resource
 */
-import React from "react";
 import {
     Modal,
     ModalOverlay,

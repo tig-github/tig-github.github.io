@@ -62,13 +62,12 @@ const Projects = () => {
   });
 
   return (
-    <Box bg="#2C1B47" w="100%" h="100%" minH="calc(100vh)" id="projects">
+    <Box className="site-section" bg="#2C1B47" w="100%" h="100%" minH="calc(100vh)" id="projects">
       <Stack
         align="center"
         spacing={10}
-        mt={{ base: "30%", sm: "20%", md: "10%" }}
       >
-        <Heading sz="md" mb="4rem">
+        <Heading sz="md">
           <Text color="white">Projects</Text>
         </Heading>
         <Flex gap={20} mb={3} direction={flexDirection}>
@@ -110,7 +109,7 @@ const Projects = () => {
           </Flex>
         </Flex>
         <Box />
-        <Flex gap={20} wrap="wrap" justify="center" w="80%">
+        <Flex gap={20} wrap="wrap" justify="center" w="80%" maxW="70rem">
           <>
             <ProjectCard
               title={"Zuum Transporation NLP Chatbot"}
